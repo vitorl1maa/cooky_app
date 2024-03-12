@@ -4,12 +4,12 @@ import { Ingredient } from "@/src/components/Ingredient";
 import { useState, useEffect } from "react";
 import { Selected } from "@/src/components/Selected";
 import { router } from "expo-router";
-import { services } from "@/src/services/services";
+import { services } from "@/src/services/";
 import { findAll } from "@/src/services/ingredientsService";
 
 export default function Index() {
   const [selected, setSelected] = useState<String[]>([]);
-  const [ingredients, setIngredients] = useState<IngredietResponse[]>([]);
+  const [ingredients, setIngredients] = useState<IngredientResponse[]>([]);
 
   function handleToggleSelected(value: string) {
     if (selected.includes(value)) {
@@ -28,11 +28,11 @@ export default function Index() {
   }
 
   function handleSearch() {
-    router.navigate("/recipes/");
+    router.navigate("/recipes/" + selected);
   }
 
   useEffect(() => {
-    services.ingrediennts, findAll().then(setIngredients);
+    services.ingredientes, findAll().then(setIngredients);
   }, []);
 
   return (

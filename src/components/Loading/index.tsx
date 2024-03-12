@@ -1,7 +1,7 @@
-import { ActivityIndicator } from "react-native"
+import { ActivityIndicator } from "react-native";
 
-import { styles } from "./styles"
-import { theme } from "@/theme"
+import { styles } from "./styles";
+import { theme } from "@/src/theme";
 
 export function Loading() {
   return (
@@ -9,5 +9,5 @@ export function Loading() {
       style={styles.container}
       color={theme.colors.green_600}
     />
-  )
+  );
 }
